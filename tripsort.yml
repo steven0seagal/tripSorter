@@ -1,0 +1,27 @@
+summary: "Sort Trip"
+description: "This is a simple API which returns sorted list of trips"
+consumes:
+- "application/json"
+produces:
+- "application/list"
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts an input dictionary of shuffle trips information, if there is no data left string empty"
+  required: true
+  schema:
+    type: "object"
+    properties:
+      trip:
+        type: "dictionary"
+        example: "{'transport_type':'plane', 'start_point':'Denver','end_point':'Barcelona','transport_number':'SK22','seat_number':'7b', 'gate':'45B','baggage_info':'344'}"
+      trip2:
+        type: "dictionary"
+        example: "{'transport_type':'train', 'start_point':'New York','end_point':'Denver','transport_number':'78A','seat_number':'', 'gate/platform':'3.75','baggage_info':''}"
+      trip3:
+        type: "dictionary"
+        example: "{'transport_type':'bus', 'start_point':'Barcelona','end_point':'Madrit','transport_number':'Mf78','seat_number':'98', 'gate/platform':'5','baggage_info':''}"
+
+responses:
+  405:
+    description: "Invalid input"
