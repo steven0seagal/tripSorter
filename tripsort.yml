@@ -14,7 +14,7 @@ parameters:
     properties:
       trip:
         type: "dictionary"
-        example: {'transport_type':'plane', 'start_point':'Denver','end_point':'Barcelona','transport_number':'SK22','seat_number':'7b', 'gate':'45B','baggage_info':'344'}
+        example: {'transport_type':'plane', 'start_point':'Denver','end_point':'Barcelona','transport_number':'SK22','seat_number':'7b', 'gate/platform':'45B','baggage_info':'344'}
       trip2:
         type: "dictionary"
         example: {'transport_type':'train', 'start_point':'New York','end_point':'Denver','transport_number':'78A','seat_number':'', 'gate/platform':'3.75','baggage_info':''}

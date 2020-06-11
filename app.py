@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 from flasgger import Swagger, swag_from
-
+from scripts import TripSorter
 app = Flask(__name__)
 api = Api(app)
 swagger = Swagger(app)
@@ -19,8 +19,13 @@ class SortBoardsingCards(Resource):
     def post(self):
 
         json_data = request.get_json(force=True)
-        return json_data
-
+        try:
+            input = TripSorter(data=json_data)
+            ordered_input = input.sort_all_data()
+            result = input.print_out_complete(ordered_input)
+            return result
+        except:
+            return 'Sorry your out input data is not correct ! ', 403
 
 api.add_resource(SortBoardsingCards, '/')
 
