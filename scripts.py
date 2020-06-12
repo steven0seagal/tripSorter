@@ -70,8 +70,9 @@ class TripSorter():
                 if info["seat_number"] == "":
                     complete_instructions += "No seat assignment. \n "
                 else:
-                    complete_instructions += "Sit in seat {0}.".format(info["seat_number"])
-
+                    complete_instructions += "Sit in seat {0}. ".format(info["seat_number"])
+        complete_instructions += "{}. ".format(stage)
+        complete_instructions += "You have arrived at your final destination "
         return complete_instructions
 
 

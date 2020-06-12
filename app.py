@@ -14,7 +14,6 @@ class SortBoardsingCards(Resource):
 
     """
     # POST method
-    # curl http://localhost:5000/ -d "{"city":"Wwa", "sex":"Male"}"
     @swag_from('tripsort.yml')
     def post(self):
 
@@ -26,7 +25,9 @@ class SortBoardsingCards(Resource):
             return result
         except:
             return 'Sorry your out input data is not correct ! ', 403
-
+    # Welcome message
+    def get(self):
+        return "Hello world!"
 api.add_resource(SortBoardsingCards, '/')
 
 if __name__ == '__main__':
